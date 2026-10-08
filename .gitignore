@@ -1,0 +1,18 @@
+# Arquivo com a chave da API do Gemini (NUNCA pode ir pro GitHub)
+.env
+
+# Cache que o Python cria sozinho
+__pycache__/
+*.pyc
+
+# Ambientes virtuais
+venv/
+.venv/
+
+# Arquivos de configuração dos editores
+.vscode/
+.idea/
+
+# Arquivos que o Windows cria sozinho
+Thumbs.db
+desktop.ini

@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- Informa ao navegador que o arquivo usa HTML5 -->
+<html lang="pt-BR"> <!-- Abre o documento e define o idioma como português do Brasil -->
+<head> <!-- Início do cabeçalho (informações que não aparecem na página) -->
+    <meta charset="UTF-8"> <!-- Permite acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta a página para telas de celular -->
+    <title>Ponto &amp; Vírgula</title> <!-- Título mostrado na aba do navegador -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Liga o arquivo de estilos CSS -->
+</head> <!-- Fim do cabeçalho -->
+<body> <!-- Início do conteúdo visível -->
+    <main> <!-- Caixa principal que agrupa todo o conteúdo -->
+        <h1>Ponto &amp; Vírgula</h1> <!-- Nome do projeto -->
+        <p class="slogan">Esqueceu o ponto e vírgula? A gente te ajuda!</p> <!-- Slogan do projeto -->
+
+        <form method="post"> <!-- Formulário que envia os dados ao Flask por POST -->
+            <label for="codigo">Cole seu código (qualquer linguagem):</label> <!-- Rótulo ligado ao campo de código -->
+            <textarea id="codigo" name="codigo" rows="12" maxlength="{{ limite }}" placeholder="Cole seu código aqui...">{{ codigo }}</textarea> <!-- Campo grande de texto; maxlength limita os caracteres; {{ codigo }} devolve o texto digitado -->
+            <p class="limite">Máximo de {{ limite }} caracteres.</p> <!-- Aviso do limite de caracteres -->
+
+            <div class="opcoes"> <!-- Agrupa as duas opções de escolha -->
+                <label><input type="radio" name="acao" value="explicar" {% if acao != 'erros' %}checked{% endif %}> Explicar código</label> <!-- Opção 1; fica marcada se não for "erros" -->
+                <label><input type="radio" name="acao" value="erros" {% if acao == 'erros' %}checked{% endif %}> Identificar erros</label> <!-- Opção 2; fica marcada se for "erros" -->
+            </div> <!-- Fim do grupo de opções -->
+
+            <button type="submit">Analisar</button> <!-- Botão que envia o formulário -->
+        </form> <!-- Fim do formulário -->
+
+        {% if erro %} <!-- Só mostra este bloco se houver mensagem de erro de validação -->
+        <section class="erro">{{ erro }}</section> <!-- Caixa com a mensagem de erro -->
+        {% endif %} <!-- Fim da condição do erro -->
+
+        {% if resposta_bonita %} <!-- Só mostra este bloco se a IA já respondeu -->
+        <section class="resposta"> <!-- Área onde a resposta da IA aparece -->
+            <h2>Resposta</h2> <!-- Título da área de resposta -->
+            <div class="resposta-bonita">{{ resposta_bonita|safe }}</div> <!-- Mostra o HTML já formatado; |safe é seguro porque o app.py bloqueia HTML vindo da IA -->
+        </section> <!-- Fim da área de resposta -->
+        {% endif %} <!-- Fim da condição da resposta -->
+    </main> <!-- Fim da caixa principal -->
+</body> <!-- Fim do conteúdo visível -->
+</html> <!-- Fim do documento -->

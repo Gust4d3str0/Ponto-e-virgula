@@ -1,0 +1,155 @@
+/* Estilo do corpo da página inteira */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte do texto */
+    background-color: #f2f4f8;      /* Cor de fundo cinza-azulada clara */
+    margin: 0;                      /* Remove a margem padrão do navegador */
+    padding: 20px;                  /* Cria um espaço interno nas bordas da tela */
+    color: #222;                    /* Cor padrão do texto (cinza escuro) */
+}
+
+/* Caixa principal branca no centro da página */
+main {
+    max-width: 800px;               /* Largura máxima da caixa */
+    margin: 0 auto;                 /* Centraliza a caixa horizontalmente */
+    background-color: #fff;         /* Fundo branco */
+    padding: 30px;                  /* Espaço interno da caixa */
+    border-radius: 10px;            /* Cantos arredondados */
+}
+
+/* Título com o nome do projeto */
+h1 {
+    margin: 0;                      /* Remove a margem do título */
+    text-align: center;             /* Centraliza o texto */
+    color: #3b5bdb;                 /* Cor azul */
+}
+
+/* Frase de efeito logo abaixo do título */
+.slogan {
+    text-align: center;             /* Centraliza o slogan */
+    color: #666;                    /* Cinza médio */
+    margin-bottom: 25px;            /* Espaço abaixo do slogan */
+}
+
+/* Rótulos do formulário */
+label {
+    font-weight: bold;              /* Deixa o texto em negrito */
+}
+
+/* Campo de texto onde o código é colado */
+textarea {
+    width: 100%;                    /* Ocupa toda a largura da caixa */
+    box-sizing: border-box;         /* Inclui borda e espaço interno no cálculo da largura */
+    margin-top: 8px;                /* Espaço acima do campo */
+    padding: 10px;                  /* Espaço interno do campo */
+    font-family: Consolas, monospace; /* Fonte de código, com letras de mesma largura */
+    font-size: 14px;                /* Tamanho do texto */
+    border: 1px solid #bbb;         /* Borda cinza fina */
+    border-radius: 6px;             /* Cantos arredondados */
+}
+
+/* Aviso do limite de caracteres */
+.limite {
+    margin: 4px 0 15px;             /* Margens: cima, laterais e baixo */
+    font-size: 13px;                /* Texto pequeno */
+    color: #777;                    /* Cinza */
+}
+
+/* Grupo das duas opções (explicar / identificar erros) */
+.opcoes {
+    margin-bottom: 15px;            /* Espaço abaixo das opções */
+}
+
+/* Cada opção dentro do grupo */
+.opcoes label {
+    margin-right: 20px;             /* Espaço entre uma opção e a outra */
+    font-weight: normal;            /* Texto normal, sem negrito */
+}
+
+/* Botão Analisar */
+button {
+    background-color: #3b5bdb;      /* Fundo azul */
+    color: #fff;                    /* Texto branco */
+    border: none;                   /* Sem borda */
+    padding: 12px 28px;             /* Espaço interno do botão */
+    font-size: 16px;                /* Tamanho do texto */
+    border-radius: 6px;             /* Cantos arredondados */
+    cursor: pointer;                /* Mostra a "mãozinha" ao passar o mouse */
+}
+
+/* Botão quando o mouse está sobre ele */
+button:hover {
+    background-color: #2f4ac0;      /* Azul um pouco mais escuro */
+}
+
+/* Caixa de mensagem de erro */
+.erro {
+    margin-top: 20px;               /* Espaço acima da caixa */
+    padding: 12px;                  /* Espaço interno */
+    background-color: #ffe3e3;      /* Fundo vermelho claro */
+    color: #c92a2a;                 /* Texto vermelho escuro */
+    border-radius: 6px;             /* Cantos arredondados */
+}
+
+/* Área da resposta da IA */
+.resposta {
+    margin-top: 25px;               /* Espaço acima da área */
+    padding: 15px;                  /* Espaço interno */
+    background-color: #f8f9fa;      /* Fundo cinza muito claro */
+    border: 1px solid #ddd;         /* Borda cinza fina */
+    border-radius: 6px;             /* Cantos arredondados */
+}
+
+/* Texto da resposta já formatada */
+.resposta-bonita {
+    font-size: 15px;                /* Tamanho do texto */
+    line-height: 1.6;               /* Espaço entre as linhas, deixa a leitura mais confortável */
+}
+
+/* Títulos dentro da resposta (###) */
+.resposta-bonita h1, .resposta-bonita h2, .resposta-bonita h3 {
+    color: #3b5bdb;                 /* Títulos em azul */
+    margin: 20px 0 8px;             /* Espaço acima e abaixo dos títulos */
+    font-size: 18px;                /* Tamanho do título */
+}
+
+/* Parágrafos dentro da resposta */
+.resposta-bonita p {
+    margin: 8px 0;                  /* Pequeno espaço acima e abaixo de cada parágrafo */
+}
+
+/* Listas dentro da resposta */
+.resposta-bonita ul, .resposta-bonita ol {
+    padding-left: 24px;             /* Recuo da lista */
+}
+
+/* Código dentro de uma frase (`print`) */
+.resposta-bonita code {
+    background-color: #e7ebfb;      /* Fundo azul bem claro */
+    color: #2f4ac0;                 /* Texto azul escuro */
+    padding: 2px 6px;               /* Espaço interno */
+    border-radius: 4px;             /* Cantos arredondados */
+    font-family: Consolas, monospace; /* Fonte de código */
+    font-size: 14px;                /* Tamanho do texto */
+}
+
+/* Bloco de código completo (```) */
+.resposta-bonita pre {
+    background-color: #1e1e2e;      /* Fundo escuro, como um editor de código */
+    padding: 14px;                  /* Espaço interno do bloco */
+    border-radius: 8px;             /* Cantos arredondados */
+    overflow-x: auto;               /* Cria rolagem lateral se a linha for muito longa */
+}
+
+/* Texto dentro do bloco de código */
+.resposta-bonita pre code {
+    background-color: transparent;  /* Remove o fundo azul do código em linha */
+    color: #f8f8f2;                 /* Texto claro sobre o fundo escuro */
+    padding: 0;                     /* Remove o espaço interno extra */
+}
+
+/* Linha separadora (---) */
+.resposta-bonita hr {
+    border: none;                   /* Remove a borda padrão */
+    border-top: 1px solid #ddd;     /* Linha cinza fina */
+    margin: 16px 0;                 /* Espaço acima e abaixo da linha */
+}
